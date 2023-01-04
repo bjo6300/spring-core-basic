@@ -5,7 +5,6 @@ import hello.core.Member.MemberRepository;
 import hello.core.Member.MemoryMemberRepository;
 import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
-import org.mockito.internal.matchers.Or;
 
 public class OrderServiceImpl implements OrderService {
 
@@ -13,7 +12,7 @@ public class OrderServiceImpl implements OrderService {
     private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 
     @Override
-    public Order createDrder(Long memberId, String itemName, int itemPrice) {
+    public Order createOrder(Long memberId, String itemName, int itemPrice) {
         Member member = memberRepository.findById(memberId);
         int discountPrice = discountPolicy.discount(member, itemPrice);
 
