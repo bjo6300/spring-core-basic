@@ -44,6 +44,7 @@ public class SingletonTest {
         assertThat(singletonService1).isSameAs(singletonService2);
         // same == // 객체 인스턴스가 같을 때 비교
         // equal // 값 비교
+        singletonService1.logic();
     }
 
 
